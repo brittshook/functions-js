@@ -2,14 +2,14 @@
 
 ## Part 1: Thinking Functionally
 1. In the lab, there are five functions that accomplish the same task. If you were looking at this code for the first time, which would make the most sense to you?
-To me, the second function makes the most sense: 
+- To me, the second function makes the most sense: 
 ```javascript
 function reverseString2(str) {
   return str.split("").reverse().join("");
 }
 ```
 
-This code is short, readable, and efficient. The methods used, in addition to the function name, help understand what is happening in the code. I also considered one of the recursive options, however it is not as readable and is less efficient in terms of time complexity. 
+- This code is short, readable, and efficient. The methods used, in addition to the function name, help understand what is happening in the code. I also considered one of the recursive options, however it is not as readable and is less efficient in terms of time complexity. 
 
 2. Take an array of numbers and return the sum.
 ```javascript
@@ -103,4 +103,4 @@ function copyAndIncrementAge(obj) {
 Note: For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
 
 3. Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior?
-In the way I wrote these functions, the updated_at prop holds a string that was converted from a Date object, therefore the setTime() method isn't immediately available to modify this prop without turning it back into a Date object.
+- In the way I wrote these functions, the updated_at prop holds a string that was converted from a Date object, therefore the setTime() method isn't immediately available to modify this prop without turning it back into a Date object.
