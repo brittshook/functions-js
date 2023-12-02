@@ -71,7 +71,16 @@ console.log(changeJobAndAgeUp(arr));
 
 // Use the reduce method to calculate the sum of the ages.
 // Then use the result to calculate the average age.
-// Already did it that way above haha
+function getSumOfAges(objArr) {
+    return objArr.reduce((sumOfAges, person) => parseInt(sumOfAges) + parseInt(person['age']), 0);
+}
+
+function getAvgAge(objArr) {
+    return getSumOfAges(objArr) / Object.keys(objArr).length;
+}
+
+console.log(getSumOfAges(arr));
+console.log(getAvgAge(arr));
 
 // Part 3: Thinking Critically
 
