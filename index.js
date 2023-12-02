@@ -3,14 +3,14 @@
 // Take an array of numbers and return the sum.
 function getSum(numArr) {
     return numArr.reduce((sum, currentNum) => sum + currentNum);
-};
+}
 
 console.log(getSum([3, 6, 7, 2, 1, 5]));
 
 // Take an array of numbers and return the average.
 function getAvg(numArr) {
     return getSum(numArr) / numArr.length;
-};
+}
 
 console.log(getAvg([3, 6, 7, 2, 1, 5]));
 
@@ -82,7 +82,7 @@ function incrementAge(obj) {
     }
     obj.age = parseInt(obj.age) + 1;
     obj.updated_at = new Date().toString();
-};
+}
 
 const person = {
     name: 'Britt', 
@@ -98,7 +98,7 @@ function copyAndIncrementAge(obj) {
     const objCopy = JSON.parse(JSON.stringify(obj));
     incrementAge(objCopy); 
     return objCopy;
-};
+}
 
 const person2 = {
     name: 'Megan', 
