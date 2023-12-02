@@ -21,7 +21,6 @@ function longestStr(strArr) {
 
 console.log(longestStr(['Jujubes', 'cheesecake', 'pie', 'wafer', 'donut', 'toffee']));
 
-
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number. 
 function stringsLongerThan(wordArr, num) {
     return wordArr.filter(word => word.length > num);
@@ -82,7 +81,7 @@ function incrementAge(obj) {
         obj.age = 0;
     }
     obj.age = parseInt(obj.age) + 1;
-
+    obj.updated_at = new Date().toString();
 };
 
 const person = {
@@ -97,7 +96,7 @@ console.log(person);
 // Take an object, make a copy, and increment the age field of the copy. Return the copy.
 function copyAndIncrementAge(obj) {
     const objCopy = JSON.parse(JSON.stringify(obj));
-    incrementAge(objCopy);
+    incrementAge(objCopy); 
     return objCopy;
 };
 
