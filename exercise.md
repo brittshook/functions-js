@@ -1,7 +1,8 @@
 # ALAB 308.5.1: Creating Reusable Functions
 
 ## Part 1: Thinking Functionally
-1. To me, the second function makes the most sense: 
+1. In the lab, there are five functions that accomplish the same task. If you were looking at this code for the first time, which would make the most sense to you?
+To me, the second function makes the most sense: 
 ```javascript
 function reverseString2(str) {
   return str.split("").reverse().join("");
@@ -80,9 +81,26 @@ function getAvgAge(objArr) {
 ```
 
 ## Part 3: Thinking Critically
+1. Take an object and increment its age field.
 ```javascript
+function incrementAge(obj) {
+    if (!obj.hasOwnProperty('age')) {
+        obj.age = 0;
+    }
+    obj.age = parseInt(obj.age) + 1;
+    obj.updated_at = new Date().toString();
+}
+```
+2. Take an object, make a copy, and increment the age field of the copy. Return the copy.
+```javascript
+function copyAndIncrementAge(obj) {
+    const objCopy = JSON.parse(JSON.stringify(obj));
+    incrementAge(objCopy); 
+    return objCopy;
+}
 ```
 
-## Part 4: Thinking Practically
+Note: For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
 
-## Part 5: Thinking Back
+3. Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior?
+In the way I wrote these functions, the updated_at prop holds a string that was converted from a Date object, therefore the setTime() method isn't immediately available to modify this prop without turning it back into a Date object.
