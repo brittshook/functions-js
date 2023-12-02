@@ -42,8 +42,46 @@ function print1ToNum(num) {
 ```
 
 ## Part 2: Thinking Methodically
+1. Sort the array by age.
+```javascript
+function sortByAge(objArr) {
+    return objArr.sort((obj1, obj2) => obj1.age - obj2.age);
+}
+```
+2. Filter the array to remove entries with an age greater than 50.
+```javascript
+function filterOutOver50(objArr) {
+    return objArr.filter(obj => obj.age <= 50);
+}
+```
+3. Map the array to change the “occupation” key to “job” and increment every age by 1.
+```javascript
+function changeJobAndAgeUp(objArr) {
+    return objArr.map(obj => {
+        const age = parseInt(obj.age) + 1;
+        obj.age = age.toString();
+
+        obj['job'] = obj['occupation'];
+        delete obj['occupation'];
+
+        return obj;
+    });
+}
+```
+4. Use the reduce method to calculate the sum of the ages. Then use the result to calculate the average age.
+```javascript
+function getSumOfAges(objArr) {
+    return objArr.reduce((sumOfAges, person) => parseInt(sumOfAges) + parseInt(person['age']), 0);
+}
+
+function getAvgAge(objArr) {
+    return getSumOfAges(objArr) / Object.keys(objArr).length;
+}
+```
 
 ## Part 3: Thinking Critically
+```javascript
+```
 
 ## Part 4: Thinking Practically
 
